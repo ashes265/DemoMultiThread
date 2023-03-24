@@ -1,0 +1,45 @@
+<configuration>
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--        <file>logback_rolling.log</file>-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover secondly logback_rolling%d{yyyyMMddHHmmss}.%i.log -->
+            <!-- rollover daily -->
+            <fileNamePattern>logback_rolling%d{yyyyMMdd}.%i.log</fileNamePattern>
+            <!-- each file should be at most 128KB, keep 1 days worth of history, but at most 1MB -->
+            <maxFileSize>128KB</maxFileSize>
+            <maxHistory>3</maxHistory>
+            <totalSizeCap>1MB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date %level %logger{10} [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--    <appender name="FILE" class="ch.qos.logback.core.FileAppender">-->
+    <!--        <file>logback_file.log</file>-->
+    <!--        <append>false</append>-->
+    <!--        &lt;!&ndash; #set immediateFlush to false for much higher logging throughput &ndash;&gt;-->
+    <!--        <immediateFlush>true</immediateFlush>-->
+    <!--        <encoder>-->
+    <!--            <pattern>%date %level %logger{10} [%file:%line] %msg%n</pattern>-->
+    <!--        </encoder>-->
+    <!--    </appender>-->
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date %level %logger{10} [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="ROLLING"/>
+        <!--        <appender-ref ref="FILE"/>-->
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <root level="info">
+        <appender-ref ref="ROLLING"/>
+        <!--        <appender-ref ref="FILE"/>-->
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

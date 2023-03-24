@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: Apollo
+Main-Class: com.mvn.app.App
+Build-Jdk: 1.8.0_211
+Created-By: Apollo
+Archiver-Version: Plexus Archiver
