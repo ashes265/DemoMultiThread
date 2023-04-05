@@ -1,135 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.mvn.app</groupId>
-  <artifactId>mvn-test</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <groupId>com.mvn.app</groupId>
+    <artifactId>mvn-test</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-  <name>mvn-test2</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
-  <packaging>jar</packaging>
+    <name>mvn-test2</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+    <packaging>jar</packaging>
 
-  <properties>
-    <java.byte.code.version>1.8</java.byte.code.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <build.number>1</build.number>
+    <properties>
+        <java.byte.code.version>1.8</java.byte.code.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <build.number>1</build.number>
 
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.shade.plugin.version>3.2.2</maven.shade.plugin.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.shade.plugin.version>3.2.2</maven.shade.plugin.version>
 
-    <main.class>main</main.class>
-    <source.directory>src/main/java</source.directory>
-    <test.source.directory>src/test/java</test.source.directory>
-  </properties>
+        <main.class>main</main.class>
+        <source.directory>src/main/java</source.directory>
+        <test.source.directory>src/test/java</test.source.directory>
+    </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
+    <repositories>
+        <repository>
+            <id>com.e-iceblue</id>
+            <name>e-iceblue</name>
+            <url>https://repo.e-iceblue.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
 
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.2.3</version>
-    </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
 
-    <dependency>
-      <groupId>org.jsoup</groupId>
-      <artifactId>jsoup</artifactId>
-      <version>1.11.3</version>
-    </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
-    <dependency>
-      <groupId>org.apache.pdfbox</groupId>
-      <artifactId>pdfbox</artifactId>
-      <version>2.0.27</version>
-    </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.11.3</version>
+        </dependency>
 
-    <!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
-    <dependency>
-      <groupId>com.itextpdf</groupId>
-      <artifactId>itextpdf</artifactId>
-      <version>5.5.13.3</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>2.0.27</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi-ooxml</artifactId>
-      <version>4.1.2</version>
-    </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.5.13.3</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi</artifactId>
-      <version>4.1.1</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.1.2</version>
+        </dependency>
 
 
-<!--    <dependency>-->
-<!--      <groupId>fr.opensagres.xdocreport</groupId>-->
-<!--      <artifactId>fr.opensagres.poi.xwpf.converter.pdf</artifactId>-->
-<!--      <version>2.0.2</version>-->
-<!--    </dependency>-->
-  </dependencies>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-scratchpad</artifactId>
+            <version>3.2-FINAL</version>
+        </dependency>
 
-  <build>
-    <defaultGoal>package</defaultGoal>
-    <sourceDirectory>${source.directory}</sourceDirectory>
-    <testSourceDirectory>${test.source.directory}</testSourceDirectory>
+        <dependency>
+            <groupId>fr.opensagres.xdocreport</groupId>
+            <artifactId>fr.opensagres.poi.xwpf.converter.pdf</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>e-iceblue</groupId>
+            <artifactId>spire.doc.free</artifactId>
+            <version>5.1.0</version>
+        </dependency>
 
-    <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-shade-plugin</artifactId>
-      <version>${maven.shade.plugin.version}</version>
-      <executions>
-        <execution>
-          <phase>package</phase>
-          <goals>
-            <goal>shade</goal>
-          </goals>
-          <configuration>
-            <transformers>
-              <transformer
-                      implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                <manifestEntries>
-                  <Main-Class>${main.class}</Main-Class>
-                  <Build-Number>${build.number}</Build-Number>
-                </manifestEntries>
-              </transformer>
-            </transformers>
-            <finalName>MyApp</finalName>
-            <!--                            <appendAssemblyId>false</appendAssemblyId>-->
-            <filters>
-              <filter>
-                <artifact>*:*</artifact>
-                <excludes>
-                  <exclude>META-INF/LICENSE</exclude>
-                  <exclude>META-INF/*.SF</exclude>
-                  <exclude>META-INF/*.DSA</exclude>
-                  <exclude>META-INF/*.RSA</exclude>
-                </excludes>
-              </filter>
-            </filters>
-          </configuration>
-        </execution>
-      </executions>
-    </plugin>
-    </plugins>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-    </resources>
+    </dependencies>
 
-  </build>
+    <build>
+        <defaultGoal>package</defaultGoal>
+        <sourceDirectory>${source.directory}</sourceDirectory>
+        <testSourceDirectory>${test.source.directory}</testSourceDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven.shade.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <Main-Class>${main.class}</Main-Class>
+                                        <Build-Number>${build.number}</Build-Number>
+                                    </manifestEntries>
+                                </transformer>
+                            </transformers>
+                            <finalName>MyApp</finalName>
+                            <!--                            <appendAssemblyId>false</appendAssemblyId>-->
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/LICENSE</exclude>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+
+    </build>
 </project>
