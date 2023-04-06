@@ -1,2 +1,6 @@
-com/mvn/app/App.class
-com/mvn/app/Run.class
+com\mvn\app\RunCallable.class
+com\mvn\app\App.class
+com\mvn\app\pdf\WorkWithPDF.class
+com\mvn\app\Student.class
+com\mvn\app\pdf\WriteToFilePDF.class
+com\mvn\app\Run.class

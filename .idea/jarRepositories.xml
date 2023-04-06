@@ -17,9 +17,19 @@
       <option name="url" value="http://nexus.vndirect.com.vn/content/groups/public/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="pdftron" />
+      <option name="name" value="PDFNet Maven" />
+      <option name="url" value="https://pdftron.com/maven/release" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="Maven Central" />
       <option name="name" value="Maven Central" />
       <option name="url" value="http://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="GroupDocsJavaAPI" />
+      <option name="name" value="GroupDocs Java API" />
+      <option name="url" value="https://repository.groupdocs.com/repo/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="fusesource" />
